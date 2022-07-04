@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 
 const routes: Routes = [
-  { path: '' , redirectTo: 'Usuários', pathMatch: 'full'},
-  { path: 'Usuários', component: UsersListComponent},
+  { path: '', component: UsersListComponent},
   { path: 'form', component: UserFormComponent},
   { path: 'form/:id', component: UserFormComponent},
 ];
