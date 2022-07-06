@@ -1,5 +1,5 @@
 import { User } from './../../../models/user';
-import { UserService } from './../../../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -34,11 +34,11 @@ export class UserFormComponent implements OnInit {
       if(this.userId !== null) {
         this.userService.getUser(this.userId).subscribe(result => {
           this.userForm.patchValue({
-            id: result[0].id,
-            nome: result[0].nome,
-            sobrenome: result[0].sobrenome,
-            idade: result[0].idade,
-            profissao: result[0].profissao,
+            id: [result[0].id],
+            nome: [result[0].nome],
+            sobrenome: [result[0].sobrenome],
+            idade:[ result[0].idade],
+            profissao: [result[0].profissao],
           })
         })
       }

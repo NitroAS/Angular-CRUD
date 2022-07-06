@@ -7,7 +7,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl = 'https://sheet.best/api/sheets/b966370d-de30-47c9-9553-f00de3b44253';
+  apiUrl = 'https://626d81a7e58c6fabe2d64e36.mockapi.io/User';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -30,17 +30,17 @@ export class UserService {
 
   // Exclui o usuario do banco DELETE
   deleteUser(id: number):Observable<User> {
-    return this.httpClient.delete<User>(`${this.apiUrl}/id/${id}`)
+    return this.httpClient.delete<User>(`${this.apiUrl}/${id}`)
   }
 
   // Edita usuario UPDATE
   updateUser(id: string, user: User):Observable<User> {
-    return this.httpClient.put<User>(`${this.apiUrl}/id/${id}`, user, this.httpOptions);
+    return this.httpClient.put<User>(`${this.apiUrl}/${id}`, user, this.httpOptions);
   }
 
   // Lista usuario unico
   getUser(id: string):Observable<User[]> {
-    return this.httpClient.get<User[]>(`${this.apiUrl}/id/${id}`)
+    return this.httpClient.get<User[]>(`${this.apiUrl}/${id}`)
   }
 }
 

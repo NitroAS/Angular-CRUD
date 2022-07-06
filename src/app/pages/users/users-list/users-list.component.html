@@ -1,7 +1,7 @@
 <div class="card w-100 my-5">
   <div class="card-body">
     <h1 class="card-title text-center">Lista de Usuários</h1>
-    <button class="btn btn-success mb-4 float-end" routerLink="/form">
+    <button class="btn btn-success mb-4 float-end" routerLink="form">
       Cadastrar Novo
     </button>
     <table class="table">
@@ -23,7 +23,8 @@
           <td>{{ user.idade }}</td>
           <td>{{ user.profissao }}</td>
           <td>
-            <button class="btn btn-primary" [routerLink]="['/form', user.id]">Editar</button>
+
+            <button class="btn btn-primary" [routerLink]="['form', user.id]">Editar</button>
           </td>
           <td>
             <button class="btn btn-danger" (click)="deleteUser(user.id)">Excluir</button>
