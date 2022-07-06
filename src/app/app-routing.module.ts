@@ -8,8 +8,7 @@ const routes: Routes = [
     // Quando carregar vazio ele vai para o Usuario e quando estiver no Usuario ele vai para o Router dele
     path: '',
     pathMatch: 'full',
-    component: UsersListComponent,
-    // redirectTo: 'Usuario',
+    redirectTo: 'Usuario',
     // Certo é redirectTo: 'Usuario'
 
   },

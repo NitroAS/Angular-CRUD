@@ -33,12 +33,14 @@ export class UserFormComponent implements OnInit {
       console.log(this.userId);
       if(this.userId !== null) {
         this.userService.getUser(this.userId).subscribe(result => {
+          console.log(result);
+
           this.userForm.patchValue({
-            id: [result[0].id],
-            nome: [result[0].nome],
-            sobrenome: [result[0].sobrenome],
-            idade:[ result[0].idade],
-            profissao: [result[0].profissao],
+            id: [result.id],
+            nome: [result.nome],
+            sobrenome: [result.sobrenome],
+            idade:[ result.idade],
+            profissao: [result.profissao],
           })
         })
       }
